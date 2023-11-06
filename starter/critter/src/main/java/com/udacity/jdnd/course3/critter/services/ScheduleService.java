@@ -1,7 +1,17 @@
 package com.udacity.jdnd.course3.critter.services;
 
-import org.springframework.stereotype.Service;
+import com.udacity.jdnd.course3.critter.dtos.ScheduleDTO;
+import com.udacity.jdnd.course3.critter.entities.Schedule;
 
-@Service
-public class ScheduleService {
+import java.util.List;
+
+public interface ScheduleService {
+    Schedule createSchedule(ScheduleDTO scheduleDTO);
+    List<Schedule> getListSchedules();
+
+    List<Schedule> getScheduleByCustomerId(Long customerId);
+
+    List<Schedule> getScheduleByPetId(Long petId);
+
+    List<Schedule> getScheduleByEmployeeId(Long employeeId);
 }
