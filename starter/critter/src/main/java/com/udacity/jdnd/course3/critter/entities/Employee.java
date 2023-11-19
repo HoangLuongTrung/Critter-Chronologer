@@ -17,9 +17,11 @@ public class Employee {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @ElementCollection
     private Set<EmployeeSkill> skills;
 
-    private Set<DayOfWeek> daysAvailable;
+    @ElementCollection
+    private Set<DayOfWeek> availableDays;
 
     public Long getId() {
         return id;
@@ -46,10 +48,10 @@ public class Employee {
     }
 
     public Set<DayOfWeek> getDaysAvailable() {
-        return daysAvailable;
+        return availableDays;
     }
 
     public void setDaysAvailable(Set<DayOfWeek> daysAvailable) {
-        this.daysAvailable = daysAvailable;
+        this.availableDays = daysAvailable;
     }
 }

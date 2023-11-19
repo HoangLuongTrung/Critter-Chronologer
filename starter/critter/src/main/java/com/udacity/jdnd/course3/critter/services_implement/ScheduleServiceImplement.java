@@ -9,10 +9,14 @@ import com.udacity.jdnd.course3.critter.repositories.PetRepository;
 import com.udacity.jdnd.course3.critter.repositories.ScheduleRepository;
 import com.udacity.jdnd.course3.critter.services.ScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
+@Transactional
 public class ScheduleServiceImplement implements ScheduleService {
     @Autowired
     ScheduleRepository scheduleRepository;
@@ -32,7 +36,7 @@ public class ScheduleServiceImplement implements ScheduleService {
         schedule.setActivities(scheduleDTO.getActivities());
         schedule.setPets(listPets);
         schedule.setEmployees(listEmployees);
-        return schedule;
+        return scheduleRepository.save(schedule);
     }
 
     @Override

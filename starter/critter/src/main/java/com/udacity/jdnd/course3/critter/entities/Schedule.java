@@ -31,6 +31,8 @@ public class Schedule {
     private List<Pet> pets;
 
     private LocalDate date;
+
+    @ElementCollection
     private Set<EmployeeSkill> activities;
 
     public Long getId() {

@@ -6,12 +6,16 @@ import com.udacity.jdnd.course3.critter.enums.EmployeeSkill;
 import com.udacity.jdnd.course3.critter.repositories.EmployeeRepository;
 import com.udacity.jdnd.course3.critter.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@Service
+@Transactional
 public class EmployeeImplement implements EmployeeService {
     @Autowired
     EmployeeRepository employeeRepository;
@@ -21,9 +25,9 @@ public class EmployeeImplement implements EmployeeService {
         Employee employee = new Employee();
         employee.setId(employeeDTO.getId());
         employee.setName(employeeDTO.getName());
-        employeeDTO.setSkills(employeeDTO.getSkills());
-        employeeDTO.setDaysAvailable(employeeDTO.getDaysAvailable());
-        return employee;
+        employee.setSkills(employeeDTO.getSkills());
+        employee.setDaysAvailable(employeeDTO.getDaysAvailable());
+        return employeeRepository.save(employee);
     }
 
     @Override

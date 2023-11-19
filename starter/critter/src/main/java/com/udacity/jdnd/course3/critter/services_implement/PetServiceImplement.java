@@ -51,5 +51,4 @@ public class PetServiceImplement implements PetService {
     public Pet getPetById(Long petId) {
         return petRepository.getOne(petId);
     }
-
 }
