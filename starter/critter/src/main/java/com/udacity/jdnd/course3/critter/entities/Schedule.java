@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "SCHEDULE")
+@Table(name = "SCHEDULES")
 public class Schedule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +17,7 @@ public class Schedule {
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "SCHEDULES_EMPLOYEES",
-            joinColumns = @JoinColumn(name = "schedule_id"),
+//            joinColumns = @JoinColumn(name = "schedule_id"),
             inverseJoinColumns = @JoinColumn(name = "employee_id")
     )
     private List<Employee> employees;
@@ -25,7 +25,7 @@ public class Schedule {
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "SCHEDULES_PETS",
-            joinColumns = @JoinColumn(name = "schedule_id"),
+//            joinColumns = @JoinColumn(name = "schedule_id"),
             inverseJoinColumns = @JoinColumn(name = "pet_id")
     )
     private List<Pet> pets;

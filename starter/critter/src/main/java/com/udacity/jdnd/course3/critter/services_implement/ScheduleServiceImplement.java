@@ -7,6 +7,7 @@ import com.udacity.jdnd.course3.critter.entities.Schedule;
 import com.udacity.jdnd.course3.critter.repositories.EmployeeRepository;
 import com.udacity.jdnd.course3.critter.repositories.PetRepository;
 import com.udacity.jdnd.course3.critter.repositories.ScheduleRepository;
+import com.udacity.jdnd.course3.critter.services.PetService;
 import com.udacity.jdnd.course3.critter.services.ScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,9 @@ public class ScheduleServiceImplement implements ScheduleService {
 
     @Autowired
     EmployeeRepository employeeRepository;
+
+    @Autowired
+    PetService petService;
 
     @Override
     public Schedule createSchedule(ScheduleDTO scheduleDTO) {

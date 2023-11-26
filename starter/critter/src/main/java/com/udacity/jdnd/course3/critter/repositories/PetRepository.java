@@ -11,4 +11,6 @@ import java.util.List;
 public interface PetRepository extends JpaRepository<Pet, Long> {
     @Query("Select p from Pet p WHERE p.customer.id = :ownerId")
     List<Pet> findPetByOwnerId(Long ownerId);
+
+
 }

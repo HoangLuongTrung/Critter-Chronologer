@@ -1,14 +1,13 @@
 package com.udacity.jdnd.course3.critter.entities;
 
 import com.udacity.jdnd.course3.critter.enums.PetType;
-import lombok.Data;
 import org.hibernate.annotations.Nationalized;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "PET")
+@Table(name = "PETS")
 public class Pet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,6 +24,7 @@ public class Pet {
     @JoinColumn(name = "customer_id", referencedColumnName = "id")
     private Customer customer;
 
+    @Column(name = "birth_date")
     private LocalDate birthDate;
 
     private String notes;

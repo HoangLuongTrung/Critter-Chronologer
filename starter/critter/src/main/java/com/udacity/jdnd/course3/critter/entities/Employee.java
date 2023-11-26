@@ -8,7 +8,7 @@ import java.time.DayOfWeek;
 import java.util.Set;
 
 @Entity
-@Table(name = "EMPLOYEE")
+@Table(name = "EMPLOYEES")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

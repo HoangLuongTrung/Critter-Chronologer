@@ -5,10 +5,8 @@ import com.udacity.jdnd.course3.critter.dtos.EmployeeDTO;
 import com.udacity.jdnd.course3.critter.dtos.EmployeeRequestDTO;
 import com.udacity.jdnd.course3.critter.entities.Customer;
 import com.udacity.jdnd.course3.critter.entities.Employee;
-import com.udacity.jdnd.course3.critter.entities.Pet;
 import com.udacity.jdnd.course3.critter.mapper.CustomerMapper;
 import com.udacity.jdnd.course3.critter.mapper.EmployeeMapper;
-import com.udacity.jdnd.course3.critter.mapper.PetMapper;
 import com.udacity.jdnd.course3.critter.services.CustomerService;
 import com.udacity.jdnd.course3.critter.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,5 +71,4 @@ public class UserController {
     public List<EmployeeDTO> findEmployeesForService(@RequestBody EmployeeRequestDTO employeeDTO) {
         return employeeService.getEmployeesByAvailability(employeeDTO.getSkills(), employeeDTO.getDate()).stream().map(EmployeeMapper::convertToEmployeeDTO).collect(Collectors.toList());
     }
-
 }
