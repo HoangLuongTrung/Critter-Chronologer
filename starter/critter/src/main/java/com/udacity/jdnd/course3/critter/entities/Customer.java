@@ -13,7 +13,7 @@ import java.util.List;
 @Table(name = "CUSTOMER")
 public class Customer {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Nationalized
